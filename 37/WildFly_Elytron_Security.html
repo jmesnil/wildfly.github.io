@@ -527,8 +527,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>WildFly Elytron Security</h1>
 <div class="details">
-<span id="revnumber">version 37.0.0.Final,</span>
-<span id="revdate">2025-08-04T14:03:23Z</span>
+<span id="revnumber">version 37.0.0.Beta1-SNAPSHOT,</span>
+<span id="revdate">2025-09-17T14:26:54Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">WildFly Elytron Security Guide</div>
@@ -12698,7 +12698,7 @@ secret key.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-When using management operations to create expressions from a <code>clear-text</code> string, remember to <a href="Admin_Guide.html#command-history">disable the history in the CLI</a> first; otherwise the clear text string will be cached. If <a href="Admin_Guide.html#Audit_logging">management audit logging</a> is enabled, the clear text string will be recorded in the audit log, unless logging is first disabled, e.g. by setting the <a href="Admin_Guide.html#audit-logging-logger-configuration">audit logger&#8217;s <code>enabled</code> attribute</a> to <code>false</code>. If local access to the credential store is available, these problems can be avoided by using <a href="#encrypt-command-line-tool">using the <code>elytron-tool</code> command line tool to create the expression</a>.
+When using management operations to create expressions from a <code>clear-text</code> string remember to disable the history in the CLI first otherwise the clear text string will be cached.
 </td>
 </tr>
 </table>
@@ -12738,7 +12738,7 @@ When using management operations to create expressions from a <code>clear-text</
 </div>
 </div>
 <div class="sect3">
-<h4 id="encrypt-command-line-tool"><a class="anchor" href="#encrypt-command-line-tool"></a>17.2.2. Command Line Tool</h4>
+<h4 id="command-line-tool"><a class="anchor" href="#command-line-tool"></a>17.2.2. Command Line Tool</h4>
 <div class="paragraph">
 <p>Once a credential store has been populated with a secret key the <code>credential-store</code> command of the <code>elytron-tool</code> can also be used to create the encrypted string to include in an expression.</p>
 </div>
@@ -16140,8 +16140,8 @@ for example, Infinispan cache cannot be used, any others?</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 37.0.0.Final<br>
-Last updated 2025-07-14 17:03:31 -0500
+Version 37.0.0.Beta1-SNAPSHOT<br>
+Last updated 2023-06-20 14:59:12 +0200
 </div>
 </div>
 </body>

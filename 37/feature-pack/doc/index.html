@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation for WildFly: Galleon Pack</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>Documentation for WildFly: Galleon Pack</h1>
+  <p>WildFly 37.0.0.Beta1-SNAPSHOT Galleon pack</p>
+  <h2>Maven Coordinates</h2>
+  <div class="code-block-container">
+    <pre>
+        <code id="maven-dependency" class="language-xml">
+&lt;dependency>
+  &lt;groupId>org.wildfly&lt;/groupId>
+  &lt;artifactId>wildfly-galleon-pack&lt;/artifactId>
+  &lt;version>37.0.0.Beta1-SNAPSHOT&lt;/version>
+&lt;/dependency>
+        </code>
+    </pre>
+    <button class="copy-btn" onclick="copyToClipboard('maven-dependency')" title="Copy to clipboard">📋</button>
+  </div>
+  <h3>Feature Pack Location</h3>
+  <div class="code-block-container">
+    <pre>
+        <code id="feature-pack-location" class="language-xml">
+&lt;feature-pack>
+    &lt;location>org.wildfly:wildfly-galleon-pack:37.0.0.Beta1-SNAPSHOT&lt;/location>
+&lt;/feature-pack>
+        </code>
+    </pre>
+    <button class="copy-btn" onclick="copyToClipboard('feature-pack-location')" title="Copy to clipboard">📋</button>
+  </div>
+
+  <h2>Model Reference</h2>
+  <a href="reference/index.html">Model Reference</a>
+
+  <h2>Provided Layers</h2>
+  <div class="table-of-contents">
+    <ul>
+      <li><a href="#layer-base-server">base-server</a></li>
+      <li><a href="#layer-batch-jberet">batch-jberet</a></li>
+      <li><a href="#layer-bean-validation">bean-validation</a></li>
+      <li><a href="#layer-cdi">cdi</a></li>
+      <li><a href="#layer-cloud-profile">cloud-profile</a></li>
+      <li><a href="#layer-cloud-server">cloud-server</a></li>
+      <li><a href="#layer-core-management">core-management</a></li>
+      <li><a href="#layer-core-server">core-server</a></li>
+      <li><a href="#layer-core-tools">core-tools</a></li>
+      <li><a href="#layer-datasources">datasources</a></li>
+      <li><a href="#layer-datasources-web-server">datasources-web-server</a></li>
+      <li><a href="#layer-deployment-scanner">deployment-scanner</a></li>
+      <li><a href="#layer-discovery">discovery</a></li>
+      <li><a href="#layer-ee">ee</a></li>
+      <li><a href="#layer-ee-concurrency">ee-concurrency</a></li>
+      <li><a href="#layer-ee-core-profile-server">ee-core-profile-server</a></li>
+      <li><a href="#layer-ee-integration">ee-integration</a></li>
+      <li><a href="#layer-ee-security">ee-security</a></li>
+      <li><a href="#layer-ejb">ejb</a></li>
+      <li><a href="#layer-ejb-dist-cache">ejb-dist-cache</a></li>
+      <li><a href="#layer-ejb-http-invoker">ejb-http-invoker</a></li>
+      <li><a href="#layer-ejb-lite">ejb-lite</a></li>
+      <li><a href="#layer-ejb-local-cache">ejb-local-cache</a></li>
+      <li><a href="#layer-elytron">elytron</a></li>
+      <li><a href="#layer-elytron-oidc-client">elytron-oidc-client</a></li>
+      <li><a href="#layer-embedded-activemq">embedded-activemq</a></li>
+      <li><a href="#layer-git-history">git-history</a></li>
+      <li><a href="#layer-h2-datasource">h2-datasource</a></li>
+      <li><a href="#layer-h2-default-datasource">h2-default-datasource</a></li>
+      <li><a href="#layer-h2-driver">h2-driver</a></li>
+      <li><a href="#layer-health">health</a></li>
+      <li><a href="#layer-hibernate-search">hibernate-search</a></li>
+      <li><a href="#layer-iiop-openjdk">iiop-openjdk</a></li>
+      <li><a href="#layer-infinispan">infinispan</a></li>
+      <li><a href="#layer-internal-standalone-full-profile">internal-standalone-full-profile</a></li>
+      <li><a href="#layer-internal-standalone-profile">internal-standalone-profile</a></li>
+      <li><a href="#layer-internal-standalone-profile">internal-standalone-profile</a></li>
+      <li><a href="#layer-io">io</a></li>
+      <li><a href="#layer-jakarta-data">jakarta-data</a></li>
+      <li><a href="#layer-jaxrs">jaxrs</a></li>
+      <li><a href="#layer-jaxrs-core">jaxrs-core</a></li>
+      <li><a href="#layer-jaxrs-server">jaxrs-server</a></li>
+      <li><a href="#layer-jdr">jdr</a></li>
+      <li><a href="#layer-jgroups-aws">jgroups-aws</a></li>
+      <li><a href="#layer-jms-activemq">jms-activemq</a></li>
+      <li><a href="#layer-jmx">jmx</a></li>
+      <li><a href="#layer-jmx-remoting">jmx-remoting</a></li>
+      <li><a href="#layer-jpa">jpa</a></li>
+      <li><a href="#layer-jpa-distributed">jpa-distributed</a></li>
+      <li><a href="#layer-jsf">jsf</a></li>
+      <li><a href="#layer-jsonb">jsonb</a></li>
+      <li><a href="#layer-jsonp">jsonp</a></li>
+      <li><a href="#layer-logging">logging</a></li>
+      <li><a href="#layer-mail">mail</a></li>
+      <li><a href="#layer-management">management</a></li>
+      <li><a href="#layer-messaging-activemq">messaging-activemq</a></li>
+      <li><a href="#layer-metrics">metrics</a></li>
+      <li><a href="#layer-micrometer">micrometer</a></li>
+      <li><a href="#layer-microprofile-config">microprofile-config</a></li>
+      <li><a href="#layer-microprofile-fault-tolerance">microprofile-fault-tolerance</a></li>
+      <li><a href="#layer-microprofile-health">microprofile-health</a></li>
+      <li><a href="#layer-microprofile-jwt">microprofile-jwt</a></li>
+      <li><a href="#layer-microprofile-lra-coordinator">microprofile-lra-coordinator</a></li>
+      <li><a href="#layer-microprofile-lra-participant">microprofile-lra-participant</a></li>
+      <li><a href="#layer-microprofile-openapi">microprofile-openapi</a></li>
+      <li><a href="#layer-microprofile-platform">microprofile-platform</a></li>
+      <li><a href="#layer-microprofile-reactive-messaging-amqp">microprofile-reactive-messaging-amqp</a></li>
+      <li><a href="#layer-microprofile-reactive-messaging-kafka">microprofile-reactive-messaging-kafka</a></li>
+      <li><a href="#layer-microprofile-reactive-streams-operators">microprofile-reactive-streams-operators</a></li>
+      <li><a href="#layer-microprofile-rest-client">microprofile-rest-client</a></li>
+      <li><a href="#layer-microprofile-telemetry">microprofile-telemetry</a></li>
+      <li><a href="#layer-mod_cluster">mod_cluster</a></li>
+      <li><a href="#layer-mvc-krazo">mvc-krazo</a></li>
+      <li><a href="#layer-naming">naming</a></li>
+      <li><a href="#layer-observability">observability</a></li>
+      <li><a href="#layer-observability">observability</a></li>
+      <li><a href="#layer-opentelemetry">opentelemetry</a></li>
+      <li><a href="#layer-pojo">pojo</a></li>
+      <li><a href="#layer-reactive-messaging">reactive-messaging</a></li>
+      <li><a href="#layer-remote-activemq">remote-activemq</a></li>
+      <li><a href="#layer-remoting">remoting</a></li>
+      <li><a href="#layer-request-controller">request-controller</a></li>
+      <li><a href="#layer-resource-adapters">resource-adapters</a></li>
+      <li><a href="#layer-sar">sar</a></li>
+      <li><a href="#layer-security-manager">security-manager</a></li>
+      <li><a href="#layer-servlet">servlet</a></li>
+      <li><a href="#layer-singleton-ha">singleton-ha</a></li>
+      <li><a href="#layer-singleton-local">singleton-local</a></li>
+      <li><a href="#layer-transactions">transactions</a></li>
+      <li><a href="#layer-undertow">undertow</a></li>
+      <li><a href="#layer-undertow-https">undertow-https</a></li>
+      <li><a href="#layer-undertow-load-balancer">undertow-load-balancer</a></li>
+      <li><a href="#layer-web-clustering">web-clustering</a></li>
+      <li><a href="#layer-web-console">web-console</a></li>
+      <li><a href="#layer-web-passivation">web-passivation</a></li>
+      <li><a href="#layer-web-server">web-server</a></li>
+      <li><a href="#layer-webservices">webservices</a></li>
+    </ul>
+  </div>
+  <h3 id="layer-base-server">base-server</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-git-history">git-history</a> -  <em> optional </em></li>
+  </ul>
+  <h3 id="layer-batch-jberet">batch-jberet</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-ee">ee</a> -  <em> required </em></li>
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.batch.api.*</li>
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;/WEB-INF/classes/META-INF/batch-jobs</li>
+  </ul>
+  <h3 id="layer-bean-validation">bean-validation</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-cdi">cdi</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.validation.*</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.validation.*</li>
+  </ul>
+  <h3 id="layer-cdi">cdi</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-bean-validation">bean-validation</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.inject,jakarta.enterprise.context</li>
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;[/META-INF/beans.xml,/WEB-INF/beans.xml]</li>
+  </ul>
+  <h3 id="layer-cloud-profile">cloud-profile</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-bean-validation">bean-validation</a> -  <em> optional </em></li>
+    <li><a href="#layer-cdi">cdi</a> -  <em> optional </em></li>
+    <li><a href="#layer-ee-security">ee-security</a> -  <em> optional </em></li>
+    <li><a href="#layer-jaxrs">jaxrs</a> -  <em> optional </em></li>
+    <li><a href="#layer-jms-activemq">jms-activemq</a> -  <em> optional </em></li>
+    <li><a href="#layer-jpa">jpa</a> -  <em> optional </em></li>
+    <li><a href="#layer-observability">observability</a> -  <em> optional </em></li>
+    <li><a href="#layer-resource-adapters">resource-adapters</a> -  <em> optional </em></li>
+    <li><a href="#layer-web-server">web-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.kind&nbsp;=&nbsp;hidden</li>
+  </ul>
+  <h3 id="layer-cloud-server">cloud-server</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ee-security">ee-security</a> -  <em> optional </em></li>
+    <li><a href="#layer-jaxrs-server">jaxrs-server</a> -  <em> required </em></li>
+    <li><a href="#layer-jms-activemq">jms-activemq</a> -  <em> optional </em></li>
+    <li><a href="#layer-observability">observability</a> -  <em> optional </em></li>
+    <li><a href="#layer-resource-adapters">resource-adapters</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.kind&nbsp;=&nbsp;base-layer</li>
+  </ul>
+  <h3 id="layer-core-management">core-management</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-core-server">core-server</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-core-management">core-management</a> -  <em> optional </em></li>
+    <li><a href="#layer-jmx-remoting">jmx-remoting</a> -  <em> optional </em></li>
+    <li><a href="#layer-logging">logging</a> -  <em> optional </em></li>
+    <li><a href="#layer-management">management</a> -  <em> optional </em></li>
+    <li><a href="#layer-request-controller">request-controller</a> -  <em> optional </em></li>
+    <li><a href="#layer-security-manager">security-manager</a> -  <em> optional </em></li>
+  </ul>
+  <h3 id="layer-core-tools">core-tools</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-management">management</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;management,wildfly-cli</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Server command line tools: jboss-cli, add-user, elytron-tool.</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>core-tools</li>
+    <li>org.jboss.as.cli</li>
+    <li>org.jboss.as.domain-add-user</li>
+    <li>org.wildfly.security.elytron-tool</li>
+  </ul>
+  <h3 id="layer-datasources">datasources</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;java.sql,javax.sql</li>
+  </ul>
+  <h3 id="layer-datasources-web-server">datasources-web-server</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-core-server">core-server</a> -  <em> required </em></li>
+    <li><a href="#layer-core-tools">core-tools</a> -  <em> optional </em></li>
+    <li><a href="#layer-datasources">datasources</a> -  <em> optional </em></li>
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+    <li><a href="#layer-web-server">web-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.kind&nbsp;=&nbsp;base-layer</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.jboss.as.patching.cli</li>
+  </ul>
+  <h3 id="layer-deployment-scanner">deployment-scanner</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-discovery">discovery</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-ee">ee</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ee-concurrency">ee-concurrency</a> -  <em> optional </em></li>
+    <li><a href="#layer-ee-integration">ee-integration</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>jakarta.resource.api</li>
+    <li>jakarta.xml.bind.api</li>
+  </ul>
+  <h3 id="layer-ee-concurrency">ee-concurrency</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.enterprise.concurrent</li>
+  </ul>
+  <h3 id="layer-ee-core-profile-server">ee-core-profile-server</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-core-server">core-server</a> -  <em> required </em></li>
+    <li><a href="#layer-ee-integration">ee-integration</a> -  <em> required </em></li>
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+    <li><a href="#layer-jaxrs-core">jaxrs-core</a> -  <em> required </em></li>
+    <li><a href="#layer-jsonb">jsonb</a> -  <em> required </em></li>
+    <li><a href="#layer-jsonp">jsonp</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.kind&nbsp;=&nbsp;default-base-layer</li>
+  </ul>
+  <h3 id="layer-ee-integration">ee-integration</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-jsonb">jsonb</a> -  <em> optional </em></li>
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.annotation,jakarta.annotation.security,jakarta.annotation.sql,jakarta.xml.bind.annotation,jakarta.xml.bind.annotation.adapters</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.xml.bind.*</li>
+  </ul>
+  <h3 id="layer-ee-security">ee-security</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.security.enterprise.authentication.mechanism.http.*,jakarta.security.enterprise.identitystore</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.security.*</li>
+  </ul>
+  <h3 id="layer-ejb">ejb</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ejb-lite">ejb-lite</a> -  <em> required </em></li>
+    <li><a href="#layer-messaging-activemq">messaging-activemq</a> -  <em> optional </em></li>
+    <li><a href="#layer-remoting">remoting</a> -  <em> required </em></li>
+    <li><a href="#layer-resource-adapters">resource-adapters</a> -  <em> required </em></li>
+    <li><a href="#layer-undertow">undertow</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.ejb.MessageDriven,jakarta.ejb.Remote</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.ejb.MessageDrivenContext</li>
+  </ul>
+  <h3 id="layer-ejb-dist-cache">ejb-dist-cache</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.profile-ha&nbsp;=&nbsp;ejb-local-cache</li>
+  </ul>
+  <h3 id="layer-ejb-http-invoker">ejb-http-invoker</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ejb-lite">ejb-lite</a> -  <em> required </em></li>
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+    <li><a href="#layer-undertow">undertow</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;ejb,http-invoker</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for invoking Jakarta Enterprise Beans over HTTP.</li>
+  </ul>
+  <h3 id="layer-ejb-lite">ejb-lite</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ejb-local-cache">ejb-local-cache</a> -  <em> optional </em></li>
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.ejb</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.ejb</li>
+  </ul>
+  <h3 id="layer-ejb-local-cache">ejb-local-cache</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-elytron">elytron</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.extension.elytron.jaas-realm</li>
+    <li>org.wildfly.openssl</li>
+    <li>org.wildfly.security.elytron-dynamic-ssl</li>
+  </ul>
+  <h3 id="layer-elytron-oidc-client">elytron-oidc-client</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;/WEB-INF/web.xml,/web-app/login-config/auth-method,OIDC</li>
+  </ul>
+  <h3 id="layer-embedded-activemq">embedded-activemq</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-ee">ee</a> -  <em> required </em></li>
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+    <li><a href="#layer-messaging-activemq">messaging-activemq</a> -  <em> required </em></li>
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+    <li><a href="#layer-remoting">remoting</a> -  <em> required </em></li>
+    <li><a href="#layer-undertow">undertow</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;messaging,embedded-activemq</li>
+    <li>org.wildfly.rule.add-on-cardinality&nbsp;=&nbsp;1</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:messaging-activemq</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for an embedded Apache Activemq Artemis Jakarta Messaging broker.</li>
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;[/WEB-INF/*-jms.xml,/META-INF/*-jms.xml],/messaging-deployment/server/jms-destinations</li>
+  </ul>
+  <h3 id="layer-git-history">git-history</h3>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.eclipse.jgit</li>
+  </ul>
+  <h3 id="layer-h2-datasource">h2-datasource</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-datasources">datasources</a> -  <em> required </em></li>
+    <li><a href="#layer-h2-driver">h2-driver</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;database,h2-database</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:datasources</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for an H2 datasource.</li>
+    <li>org.wildfly.rule.bring-datasource&nbsp;=&nbsp;java:jboss/datasources/ExampleDS</li>
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;[/WEB-INF/classes/META-INF/persistence.xml,/META-INF/persistence.xml],/persistence/persistence-unit/jta-data-source,java:jboss/datasources/ExampleDS</li>
+  </ul>
+  <h3 id="layer-h2-default-datasource">h2-default-datasource</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-datasources">datasources</a> -  <em> required </em></li>
+    <li><a href="#layer-h2-datasource">h2-datasource</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;database,h2-database:default</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:datasources</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for an H2 datasource set as the ee subsystem default datasource.</li>
+    <li>org.wildfly.rule.add-on-fix-no-default-datasource&nbsp;=&nbsp;</li>
+  </ul>
+  <h3 id="layer-h2-driver">h2-driver</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-datasources">datasources</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotation.field.value-className&nbsp;=&nbsp;jakarta.annotation.sql.DataSourceDefinition,className=org.h2.*</li>
+    <li>org.wildfly.rule.annotation.field.value-url&nbsp;=&nbsp;jakarta.annotation.sql.DataSourceDefinition,url=jdbc:h2:*</li>
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;[/WEB-INF/*.xml,/META-INF/*.xml],/datasources/datasource/driver,h2</li>
+    <li>org.wildfly.rule.xml-path-xa&nbsp;=&nbsp;[/WEB-INF/*.xml,/META-INF/*.xml],/datasources/xa-datasource/driver,h2</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>com.h2database.h2</li>
+  </ul>
+  <h3 id="layer-health">health</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-management">management</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;observability,health</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:management</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for runtime health checks.</li>
+  </ul>
+  <h3 id="layer-hibernate-search">hibernate-search</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-jpa">jpa</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.hibernate.search.backend.elasticsearch</li>
+    <li>org.hibernate.search.backend.lucene</li>
+    <li>org.hibernate.search.mapper.orm</li>
+  </ul>
+  <h3 id="layer-iiop-openjdk">iiop-openjdk</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;rpc,iiop</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;none</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for IIOP.</li>
+  </ul>
+  <h3 id="layer-infinispan">infinispan</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;clustering,infinispan</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Brings in infinispan caches.</li>
+  </ul>
+  <h3 id="layer-internal-standalone-full-profile">internal-standalone-full-profile</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-embedded-activemq">embedded-activemq</a> -  <em> optional </em></li>
+    <li><a href="#layer-iiop-openjdk">iiop-openjdk</a> -  <em> optional </em></li>
+    <li><a href="#layer-internal-standalone-profile">internal-standalone-profile</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.kind&nbsp;=&nbsp;hidden</li>
+  </ul>
+  <h3 id="layer-internal-standalone-profile">internal-standalone-profile</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-batch-jberet">batch-jberet</a> -  <em> optional </em></li>
+    <li><a href="#layer-ee-security">ee-security</a> -  <em> optional </em></li>
+    <li><a href="#layer-ejb">ejb</a> -  <em> optional </em></li>
+    <li><a href="#layer-ejb-http-invoker">ejb-http-invoker</a> -  <em> optional </em></li>
+    <li><a href="#layer-elytron-oidc-client">elytron-oidc-client</a> -  <em> optional </em></li>
+    <li><a href="#layer-h2-default-datasource">h2-default-datasource</a> -  <em> optional </em></li>
+    <li><a href="#layer-health">health</a> -  <em> optional </em></li>
+    <li><a href="#layer-hibernate-search">hibernate-search</a> -  <em> optional </em></li>
+    <li><a href="#layer-jaxrs-server">jaxrs-server</a> -  <em> required </em></li>
+    <li><a href="#layer-jdr">jdr</a> -  <em> optional </em></li>
+    <li><a href="#layer-jsf">jsf</a> -  <em> optional </em></li>
+    <li><a href="#layer-mail">mail</a> -  <em> optional </em></li>
+    <li><a href="#layer-metrics">metrics</a> -  <em> optional </em></li>
+    <li><a href="#layer-pojo">pojo</a> -  <em> optional </em></li>
+    <li><a href="#layer-remoting">remoting</a> -  <em> optional </em></li>
+    <li><a href="#layer-resource-adapters">resource-adapters</a> -  <em> optional </em></li>
+    <li><a href="#layer-sar">sar</a> -  <em> optional </em></li>
+    <li><a href="#layer-undertow-https">undertow-https</a> -  <em> optional </em></li>
+    <li><a href="#layer-web-console">web-console</a> -  <em> optional </em></li>
+    <li><a href="#layer-web-passivation">web-passivation</a> -  <em> optional </em></li>
+    <li><a href="#layer-webservices">webservices</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.kind&nbsp;=&nbsp;hidden</li>
+  </ul>
+  <h3 id="layer-internal-standalone-profile">internal-standalone-profile</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-jwt">microprofile-jwt</a> -  <em> optional </em></li>
+  </ul>
+  <h3 id="layer-io">io</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-jakarta-data">jakarta-data</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-jpa">jpa</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.data</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.data</li>
+  </ul>
+  <h3 id="layer-jaxrs">jaxrs</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-deployment-scanner">deployment-scanner</a> -  <em> optional </em></li>
+    <li><a href="#layer-ee-concurrency">ee-concurrency</a> -  <em> optional </em></li>
+    <li><a href="#layer-jaxrs-core">jaxrs-core</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.ws.rs,jakarta.ws.rs.core</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.ws.rs,jakarta.ws.rs.core</li>
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;/WEB-INF/web.xml,/web-app/servlet/servlet-class,jakarta.ws.rs.core.Application</li>
+  </ul>
+  <h3 id="layer-jaxrs-core">jaxrs-core</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ee-integration">ee-integration</a> -  <em> required </em></li>
+    <li><a href="#layer-servlet">servlet</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-jaxrs-server">jaxrs-server</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-bean-validation">bean-validation</a> -  <em> optional </em></li>
+    <li><a href="#layer-cdi">cdi</a> -  <em> optional </em></li>
+    <li><a href="#layer-datasources-web-server">datasources-web-server</a> -  <em> required </em></li>
+    <li><a href="#layer-jaxrs">jaxrs</a> -  <em> optional </em></li>
+    <li><a href="#layer-jpa">jpa</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.kind&nbsp;=&nbsp;base-layer</li>
+  </ul>
+  <h3 id="layer-jdr">jdr</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-management">management</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;management,jdr</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for the JBoss Diagnostic Reporting (JDR).</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>bin.jdrtools</li>
+  </ul>
+  <h3 id="layer-jgroups-aws">jgroups-aws</h3>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;clustering,jgroups-aws</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:jgroups</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Brings in JBoss Modules modules required to configure the 'aws.S3_PING' discovery protocol.</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.jgroups.aws</li>
+  </ul>
+  <h3 id="layer-jms-activemq">jms-activemq</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-messaging-activemq">messaging-activemq</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-jmx">jmx</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-jmx-remoting">jmx-remoting</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-jmx">jmx</a> -  <em> required </em></li>
+    <li><a href="#layer-management">management</a> -  <em> required </em></li>
+    <li><a href="#layer-remoting">remoting</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-jpa">jpa</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-bean-validation">bean-validation</a> -  <em> optional </em></li>
+    <li><a href="#layer-datasources">datasources</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.persistence</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.persistence,jakarta.persistence.criteria</li>
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;[/META-INF/persistence.xml,/WEB-INF/classes/META-INF/persistence.xml]</li>
+  </ul>
+  <h3 id="layer-jpa-distributed">jpa-distributed</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-bean-validation">bean-validation</a> -  <em> optional </em></li>
+    <li><a href="#layer-datasources">datasources</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.profile-ha&nbsp;=&nbsp;jpa</li>
+  </ul>
+  <h3 id="layer-jsf">jsf</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-bean-validation">bean-validation</a> -  <em> optional </em></li>
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-web-server">web-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.faces.annotation</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.faces.*</li>
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;/WEB-INF/faces-config.xml</li>
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;/WEB-INF/web.xml,/web-app/servlet/servlet-class,jakarta.faces.webapp.FacesServlet</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.jboss.as.jsf-injection</li>
+  </ul>
+  <h3 id="layer-jsonb">jsonb</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.json.bind.annotation</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.json.bind.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>jakarta.json.bind.api</li>
+    <li>org.eclipse.yasson</li>
+  </ul>
+  <h3 id="layer-jsonp">jsonp</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.json,jakarta.json.stream</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>jakarta.json.api</li>
+    <li>org.eclipse.parsson</li>
+  </ul>
+  <h3 id="layer-logging">logging</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-mail">mail</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.mail</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.mail.*</li>
+  </ul>
+  <h3 id="layer-management">management</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-messaging-activemq">messaging-activemq</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-resource-adapters">resource-adapters</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.jms</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.jms</li>
+    <li>org.wildfly.rule.expect-add-on-family&nbsp;=&nbsp;messaging</li>
+  </ul>
+  <h3 id="layer-metrics">metrics</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-management">management</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;observability,metrics</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:management</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for base metrics from the WildFly Management Model and JVM MBeans.</li>
+  </ul>
+  <h3 id="layer-micrometer">micrometer</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;observability,micrometer</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:cdi</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for Micrometer.</li>
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;io.micrometer.core.annotation</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;io.micrometer.core.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>io.prometheus</li>
+  </ul>
+  <h3 id="layer-microprofile-config">microprofile-config</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.config.inject</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.config.*</li>
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties]</li>
+  </ul>
+  <h3 id="layer-microprofile-fault-tolerance">microprofile-fault-tolerance</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.faulttolerance</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.faulttolerance.*</li>
+  </ul>
+  <h3 id="layer-microprofile-health">microprofile-health</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-health">health</a> -  <em> required </em></li>
+    <li><a href="#layer-management">management</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.health</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.health.*</li>
+  </ul>
+  <h3 id="layer-microprofile-jwt">microprofile-jwt</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ee-security">ee-security</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.jwt,org.eclipse.microprofile.auth.LoginConfig</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.jwt.*</li>
+  </ul>
+  <h3 id="layer-microprofile-lra-coordinator">microprofile-lra-coordinator</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-jaxrs">jaxrs</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> optional </em></li>
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;lra,lra-coordinator</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;none</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for MicroProfile LRA Coordinator.</li>
+  </ul>
+  <h3 id="layer-microprofile-lra-participant">microprofile-lra-participant</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-jaxrs">jaxrs</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.lra.annotation,org.eclipse.microprofile.lra.annotation.ws.rs</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.lra.*</li>
+  </ul>
+  <h3 id="layer-microprofile-openapi">microprofile-openapi</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-jaxrs">jaxrs</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;jaxrs,openapi</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:jaxrs</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for MicroProfile OpenAPI.</li>
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.openapi.*</li>
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;[/META-INF/openapi.yml,/META-INF/openapi.yaml,/META-INF/openapi.json,/WEB-INF/classes/META-INF/openapi.yml,/WEB-INF/classes/META-INF/openapi.yaml,/WEB-INF/classes/META-INF/openapi.json]</li>
+    <li>org.wildfly.rule.properties-file-match-oas-filter&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.openapi.filter,*</li>
+    <li>org.wildfly.rule.properties-file-match-oas-model-reader&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.openapi.model.reader,*</li>
+  </ul>
+  <h3 id="layer-microprofile-platform">microprofile-platform</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-fault-tolerance">microprofile-fault-tolerance</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-health">microprofile-health</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-jwt">microprofile-jwt</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-openapi">microprofile-openapi</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-rest-client">microprofile-rest-client</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-telemetry">microprofile-telemetry</a> -  <em> optional </em></li>
+  </ul>
+  <h3 id="layer-microprofile-reactive-messaging-amqp">microprofile-reactive-messaging-amqp</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-microprofile-reactive-messaging">microprofile-reactive-messaging</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;reactive-messaging,amqp</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for the MicroProfile Reactive Messaging AMQP connector.</li>
+    <li>org.wildfly.rule.properties-file-match-mp-amqp-incoming&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.incoming.*.connector,smallrye-amqp</li>
+    <li>org.wildfly.rule.properties-file-match-mp-amqp-outgoing&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.outgoing.*.connector,smallrye-amqp</li>
+    <li>org.wildfly.rule.properties-file-match-mp-amqp-property&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.connector.smallrye-amqp.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>io.smallrye.reactive.messaging.connector.amqp</li>
+    <li>org.wildfly.reactive.messaging.amqp</li>
+  </ul>
+  <h3 id="layer-microprofile-reactive-messaging-kafka">microprofile-reactive-messaging-kafka</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-microprofile-reactive-messaging">microprofile-reactive-messaging</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;reactive-messaging,kafka</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for the MicroProfile Reactive Messaging Kafka connector.</li>
+    <li>org.wildfly.rule.properties-file-match-mp-kafka-incoming&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.incoming.*.connector,smallrye-kafka</li>
+    <li>org.wildfly.rule.properties-file-match-mp-kafka-outgoing&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.outgoing.*.connector,smallrye-kafka</li>
+    <li>org.wildfly.rule.properties-file-match-mp-kafka-property&nbsp;=&nbsp;[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.connector.smallrye-kafka.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>io.smallrye.reactive.messaging.connector.kafka</li>
+    <li>org.wildfly.reactive.messaging.kafka</li>
+  </ul>
+  <h3 id="layer-microprofile-reactive-streams-operators">microprofile-reactive-streams-operators</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.reactive.streams.operators.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.extension.microprofile.reactive-streams-operators-smallrye</li>
+  </ul>
+  <h3 id="layer-microprofile-rest-client">microprofile-rest-client</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.rest.client.annotation,org.eclipse.microprofile.rest.client.inject</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.rest.client.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.jboss.resteasy.microprofile.config</li>
+    <li>org.jboss.resteasy.resteasy-client-microprofile</li>
+  </ul>
+  <h3 id="layer-microprofile-telemetry">microprofile-telemetry</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> required </em></li>
+    <li><a href="#layer-opentelemetry">opentelemetry</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.inclusion-mode&nbsp;=&nbsp;all-dependencies</li>
+  </ul>
+  <h3 id="layer-mod_cluster">mod_cluster</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-web-server">web-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;clustering,mod_cluster</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:undertow</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for mod_cluster integration.</li>
+  </ul>
+  <h3 id="layer-mvc-krazo">mvc-krazo</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-bean-validation">bean-validation</a> -  <em> required </em></li>
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-jaxrs-core">jaxrs-core</a> -  <em> required </em></li>
+    <li><a href="#layer-jsf">jsf</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.mvc</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.mvc</li>
+  </ul>
+  <h3 id="layer-naming">naming</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;javax.naming</li>
+  </ul>
+  <h3 id="layer-observability">observability</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-health">health</a> -  <em> optional </em></li>
+    <li><a href="#layer-metrics">metrics</a> -  <em> optional </em></li>
+  </ul>
+  <h3 id="layer-observability">observability</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-health">microprofile-health</a> -  <em> optional </em></li>
+    <li><a href="#layer-microprofile-telemetry">microprofile-telemetry</a> -  <em> optional </em></li>
+  </ul>
+  <h3 id="layer-opentelemetry">opentelemetry</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;io.opentelemetry.instrumentation.annotations</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;io.opentelemetry.api.*,io.opentelemetry.sdk.*</li>
+  </ul>
+  <h3 id="layer-pojo">pojo</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;[/META-INF/*jboss-beans.xml,/WEB-INF/*jboss-beans.xml,/WEB-INF/classes/META-INF/*jboss-beans.xml]</li>
+  </ul>
+  <h3 id="layer-reactive-messaging">reactive-messaging</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-cdi">cdi</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-config">microprofile-config</a> -  <em> required </em></li>
+    <li><a href="#layer-microprofile-reactive-streams-operators">microprofile-reactive-streams-operators</a> -  <em> required </em></li>
+    <li><a href="#layer-transactions">transactions</a> -  <em> optional </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;org.eclipse.microprofile.reactive.messaging.*</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.eclipse.microprofile.reactive.messaging.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.extension.microprofile.reactive-messaging-smallrye</li>
+  </ul>
+  <h3 id="layer-remote-activemq">remote-activemq</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-messaging-activemq">messaging-activemq</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;messaging,remote-activemq</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;only:messaging-activemq</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for connections to a remote Apache Activemq Artemis Jakarta Messaging broker.</li>
+  </ul>
+  <h3 id="layer-remoting">remoting</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+    <li><a href="#layer-io">io</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-request-controller">request-controller</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-resource-adapters">resource-adapters</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;[/META-INF/ra.xml,/META-INF/ironjacamar.xml]</li>
+  </ul>
+  <h3 id="layer-sar">sar</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-jmx">jmx</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;/META-INF/jboss-service.xml</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.jboss.as.system-jmx</li>
+  </ul>
+  <h3 id="layer-security-manager">security-manager</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-servlet">servlet</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-deployment-scanner">deployment-scanner</a> -  <em> optional </em></li>
+    <li><a href="#layer-ee-integration">ee-integration</a> -  <em> required </em></li>
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+    <li><a href="#layer-undertow">undertow</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.servlet.annotation,jakarta.websocket.*</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.servlet.*,jakarta.websocket.*</li>
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;/WEB-INF/web.xml,/web-app/servlet</li>
+  </ul>
+  <h3 id="layer-singleton-ha">singleton-ha</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.profile-ha&nbsp;=&nbsp;singleton-local</li>
+  </ul>
+  <h3 id="layer-singleton-local">singleton-local</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;org.wildfly.clustering.singleton.*</li>
+    <li>org.wildfly.rule.expected-file&nbsp;=&nbsp;[/META-INF/singleton-deployment.xml,/WEB-INF/classes/META-INF/singleton-deployment.xml]</li>
+  </ul>
+  <h3 id="layer-transactions">transactions</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ee">ee</a> -  <em> required </em></li>
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.transaction</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.transaction</li>
+  </ul>
+  <h3 id="layer-undertow">undertow</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-io">io</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-undertow-https">undertow-https</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-elytron">elytron</a> -  <em> required </em></li>
+    <li><a href="#layer-undertow">undertow</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;security,ssl</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for the Undertow HTTPS listener.</li>
+  </ul>
+  <h3 id="layer-undertow-load-balancer">undertow-load-balancer</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-base-server">base-server</a> -  <em> required </em></li>
+    <li><a href="#layer-io">io</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;web,load-balancer</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;none</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Support for Undertow configured as a load balancer.</li>
+  </ul>
+  <h3 id="layer-web-clustering">web-clustering</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+    <li><a href="#layer-web-server">web-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.profile-ha&nbsp;=&nbsp;web-passivation</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.clustering.web.undertow</li>
+  </ul>
+  <h3 id="layer-web-console">web-console</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-management">management</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.add-on&nbsp;=&nbsp;management,hal-web-console</li>
+    <li>org.wildfly.rule.add-on-depends-on&nbsp;=&nbsp;all-dependencies</li>
+    <li>org.wildfly.rule.add-on-description&nbsp;=&nbsp;Management Web console. Make sure to add an initial user.</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.jboss.as.console</li>
+  </ul>
+  <h3 id="layer-web-passivation">web-passivation</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-transactions">transactions</a> -  <em> required </em></li>
+    <li><a href="#layer-web-server">web-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.xml-path&nbsp;=&nbsp;/WEB-INF/web.xml,/web-app/distributable</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.clustering.web.undertow</li>
+  </ul>
+  <h3 id="layer-web-server">web-server</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-deployment-scanner">deployment-scanner</a> -  <em> optional </em></li>
+    <li><a href="#layer-ee">ee</a> -  <em> required </em></li>
+    <li><a href="#layer-naming">naming</a> -  <em> required </em></li>
+    <li><a href="#layer-servlet">servlet</a> -  <em> required </em></li>
+  </ul>
+  <h3 id="layer-webservices">webservices</h3>
+  <h4 class="toggle-link">
+    <a href="#">Dependencies</a>
+  </h4>
+  <ul class="collapsible">
+    <li><a href="#layer-ejb-lite">ejb-lite</a> -  <em> optional </em></li>
+    <li><a href="#layer-messaging-activemq">messaging-activemq</a> -  <em> optional </em></li>
+    <li><a href="#layer-web-server">web-server</a> -  <em> required </em></li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Layer Properties</a>
+  </h4>
+  <ul class="collapsible">
+    <li>org.wildfly.rule.annotations&nbsp;=&nbsp;jakarta.jws,jakarta.jws.soap,jakarta.xml.ws.*</li>
+    <li>org.wildfly.rule.class&nbsp;=&nbsp;jakarta.xml.ws.*</li>
+  </ul>
+  <h4 class="toggle-link">
+    <a href="#">Packages</a>
+  </h4>
+  <ul class="collapsible">
+    <li>bin.wstools</li>
+    <li>org.jboss.as.webservices.server.integration</li>
+    <li>org.jboss.ws.cxf.sts</li>
+    <li>org.jboss.ws.saaj-impl</li>
+    <li>org.jboss.ws.tools.common</li>
+    <li>org.jboss.ws.tools.wsconsume</li>
+    <li>org.jboss.ws.tools.wsprovide</li>
+  </ul>
+
+  <h2>About</h2>
+  <p>
+    This feature pack is hosted at  <a href="http://www.jboss.org">http://www.jboss.org</a>
+  </p>
+  <p>
+    Source code of this feature pack is hosted at <a href="https://github.com/wildfly/wildfly">https://github.com/wildfly/wildfly</a>
+  </p>
+  <p>This feature pack is licensed under:</p>
+  <ul>
+    <li>Apache License 2.0</li>
+  </ul>
+</div>
+</body>
+</html>

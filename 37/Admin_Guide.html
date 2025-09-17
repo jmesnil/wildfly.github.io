@@ -529,8 +529,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>WildFly Admin Guide</h1>
 <div class="details">
 <span id="author" class="author">WildFly developer team</span><br>
-<span id="revnumber">version 37.0.0.Final,</span>
-<span id="revdate">2025-08-04T14:03:23Z</span>
+<span id="revnumber">version 37.0.0.Beta1-SNAPSHOT,</span>
+<span id="revdate">2025-09-17T14:26:54Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">WildFly Admin guide</div>
@@ -9682,7 +9682,7 @@ is <code>subsystem=batch-jberet</code>.
 <h4 id="default-subsystem-configuration"><a class="anchor" href="#default-subsystem-configuration"></a><a class="link" href="#default-subsystem-configuration">7.8.1. Default Subsystem Configuration</a></h4>
 <div class="paragraph">
 <p>For up to date information about subsystem configuration options see the
-<a href="wildscribe" target="_blank" rel="noopener">WildFly model reference</a>.</p>
+<a href="feature-pack/doc/reference/subsystem/batch-jberet/index.html">/subsystem=batch-jberet model reference</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -11272,7 +11272,7 @@ handlers). Each handler declares the log format and output.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The WildFly Model Reference provides a complete description of the <a href="./wildscribe/subsystem/logging/index.html">management API for the <code>logging</code> subsystem</a>.
+The WildFly Model Reference provides a complete description of the <a href="feature-pack/doc/reference/subsystem/logging/index.html">/subsystem=logging model reference</a>.
 </td>
 </tr>
 </table>
@@ -14173,9 +14173,9 @@ You  need at least four connections:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>So you should define a <a href="wildscribe/subsystem/datasources/xa-data-source/index.html#attr-min-pool-size"><code>min-pool-size</code></a> of 4 for the pool.<br>
+<p>So you should define a <a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html#attr-min-pool-size"><code>min-pool-size</code></a> of 4 for the pool.<br>
 But one fact that you need to take into account is that paging and large messages can use an unbounded number of threads.
-The size, a.k.a. <a href="wildscribe/subsystem/datasources/xa-data-source/index.html#attr-max-pool-size"><code>max-pool-size</code></a>, of the pool should be defined according to the amount of concurrent threads that perform page/large message streaming operations. There is no defined rule for this as there is no 1-1 relation between the number of threads and the number of connections. The number of connections depend on the number of threads processing paging and large messages operations as well as the time you are willing to wait to get a connection (cf. <a href="https://docs.wildfly.org/22/wildscribe/subsystem/datasources/xa-data-source/index.html#attr-blocking-timeout-wait-millis"><code>blocking-timeout-wait-millis</code></a>). When new large messages or paging operations occur they will be in a dedicated thread and will try to get a connection, being enqueued until one is ready or the time to obtain one runs out which will create a failure.<br>
+The size, a.k.a. <a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html#attr-max-pool-size"><code>max-pool-size</code></a>, of the pool should be defined according to the amount of concurrent threads that perform page/large message streaming operations. There is no defined rule for this as there is no 1-1 relation between the number of threads and the number of connections. The number of connections depend on the number of threads processing paging and large messages operations as well as the time you are willing to wait to get a connection (cf. <a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html#attr-blocking-timeout-wait-millis"><code>blocking-timeout-wait-millis</code></a>). When new large messages or paging operations occur they will be in a dedicated thread and will try to get a connection, being enqueued until one is ready or the time to obtain one runs out which will create a failure.<br>
 You really need to tailor your configuration according to your needs and test it in your environment following the <a href="#DataSource">DataSource Subsystem</a> subsystem documentation and perform tests and peroformance runs before going to production.</p>
 </div>
 <div class="sect4">
@@ -14193,8 +14193,7 @@ You really need to tailor your configuration according to your needs and test it
 <a href="#DataSource">DataSource Subsystem</a></p>
 </li>
 <li>
-<p>WildFly datasource configuration model
-link:wildscribe/subsystem/datasources/xa-data-source/index.html</p>
+<p><a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html">/subsystem=datasources/xa-data-source model reference</a></p>
 </li>
 </ul>
 </div>
@@ -17954,7 +17953,7 @@ resource in the model.</p>
 </div>
 <div class="paragraph">
 <p>The description of individual attributes and their meaning can be found in the
-<a href="wildscribe{outfilesuffix/}subsystem/transactions">Model Reference Guide</a>.</p>
+<a href="feature-pack/doc/reference/subsystem/transactions/index.html">/subsystem=transactions model reference</a>.</p>
 </div>
 <div class="sect5">
 <h6 id="jts"><a class="anchor" href="#jts"></a><a class="link" href="#jts">jts</a></h6>
@@ -19447,7 +19446,7 @@ you should be able to see the proxied content.</p>
 </div>
 <div class="paragraph">
 <p>The full details of all configuration options available can be found in
-the <a href="wildscribe/subsystem/undertow/index.html" target="_blank" rel="noopener">subsystem reference</a>.</p>
+the <a href="feature-pack/doc/reference/subsystem/undertow/index.html">/subsystem=undertow model reference</a>.</p>
 </div>
 </div>
 </div>
@@ -22359,7 +22358,7 @@ attribute is treated as relative to the path specified by this attribute</p></td
 </div>
 </div>
 <div class="sect3">
-<h4 id="audit-logging-logger-configuration"><a class="anchor" href="#audit-logging-logger-configuration"></a><a class="link" href="#audit-logging-logger-configuration">9.5.3. Logger configuration</a></h4>
+<h4 id="logger-configuration"><a class="anchor" href="#logger-configuration"></a><a class="link" href="#logger-configuration">9.5.3. Logger configuration</a></h4>
 <div class="paragraph">
 <p>The final part that needs configuring is the logger for the management
 operations. This references one or more handlers and is configured at
@@ -28276,8 +28275,8 @@ example response would look like this:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 37.0.0.Final<br>
-Last updated 2025-07-14 17:03:31 -0500
+Version 37.0.0.Beta1-SNAPSHOT<br>
+Last updated 2024-12-13 13:24:43 +0100
 </div>
 </div>
 </body>
