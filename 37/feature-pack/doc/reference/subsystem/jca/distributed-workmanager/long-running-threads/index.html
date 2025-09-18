@@ -16,7 +16,7 @@
     <nav aria-label="Breadcrumb" class="breadcrumb">
         <ol>
             <li>
-                <a href="../../../../index.html">home</a>
+                <a href="../../../../index.html">root</a>
             </li>
             <li>
                 <a href="../../../../subsystem/jca/index.html">subsystem=jca</a>
@@ -27,7 +27,7 @@
             <li>long-running-threads</li>
         </ol>
     </nav>
-</div>    <h1>Model Reference for long-running-threads</h1>
+</div>    <h1>Management API Reference for long-running-threads</h1>
     <p>A thread pool executor with a bounded queue where threads submittings tasks may block. Such a thread pool has a core and maximum size and a specified queue length.  When a task is submitted, if the number of running threads is less than the core size, a new thread is created.  Otherwise, if there is room in the queue, the task is enqueued. Otherwise, if the number of running threads is less than the maximum size, a new thread is created. Otherwise, the caller blocks until room becomes available in the queue.</p>
 
 </header>

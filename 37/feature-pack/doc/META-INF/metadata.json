@@ -69,11 +69,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "jakarta.jws,jakarta.jws.soap,jakarta.xml.ws.*"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.xml.ws.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta XML Web Services"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "jakarta.jws,jakarta.jws.soap,jakarta.xml.ws.*"
     } ],
     "configurations" : [ {
       "_address" : "/subsystem=webservices@@@statistics-enabled",
@@ -117,11 +123,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "jakarta.security.enterprise.authentication.mechanism.http.*,jakarta.security.enterprise.identitystore"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.security.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Security"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for EE Security"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "jakarta.security.enterprise.authentication.mechanism.http.*,jakarta.security.enterprise.identitystore"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -133,6 +145,12 @@
     } ],
     "managementModel" : { },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for JSON Processing (Jakarta JSON Processing) provisioning the Jakarta JSON Processing API and Implementation modules."
+    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.json,jakarta.json.stream"
     } ],
@@ -183,6 +201,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "security,ssl"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Security"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for securing web access with HTTPS"
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for the Undertow HTTPS listener."
@@ -253,11 +277,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "jakarta.mail"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.mail.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Mail"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "jakarta.mail"
     } ],
     "configurations" : [ {
       "_address" : "/socket-binding-group=*/remote-destination-outbound-socket-binding=*@@@host",
@@ -415,11 +445,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "org.eclipse.microprofile.lra.annotation,org.eclipse.microprofile.lra.annotation.ws.rs"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.lra.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for acting as a participant in MicroProfile LRA long-running actions."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "org.eclipse.microprofile.lra.annotation,org.eclipse.microprofile.lra.annotation.ws.rs"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -458,6 +494,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on-fix-no-default-datasource",
       "value" : ""
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Database"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for an H2 datasource set as the ee subsystem default datasource."
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for an H2 datasource set as the ee subsystem default datasource."
@@ -621,10 +663,16 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
+      "name" : "org.wildfly.rule.class",
       "value" : "jakarta.ejb"
     }, {
-      "name" : "org.wildfly.rule.class",
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Enterprise Beans Lite"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
       "value" : "jakarta.ejb"
     } ],
     "configurations" : [ {
@@ -765,6 +813,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta EE Concurrency"
+    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.enterprise.concurrent"
     } ],
@@ -1547,6 +1601,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for distributable web applications. Configures a non-local Infinispan-based container web cache for data session handling suitable to clustering environments."
+    }, {
       "name" : "org.wildfly.rule.profile-ha",
       "value" : "web-passivation"
     } ],
@@ -2151,6 +2211,15 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.note",
+      "value" : "ejb-local-cache layer must be explicitly excluded if ejb-dist-cache is in use."
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Infinispan-based distributed cache for stateful session beans."
+    }, {
       "name" : "org.wildfly.rule.profile-ha",
       "value" : "ejb-local-cache"
     } ],
@@ -2239,6 +2308,12 @@
     }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.batch.api.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Batch"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -2259,11 +2334,17 @@
       "name" : "org.wildfly.rule.expected-file",
       "value" : "[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties]"
     }, {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "org.eclipse.microprofile.config.inject"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.config.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Config"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "org.eclipse.microprofile.config.inject"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -2281,6 +2362,12 @@
       "name" : "org.wildfly.rule.add-on",
       "value" : "management,hal-web-console"
     }, {
+      "name" : "org.wildfly.category",
+      "value" : "Management"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for loading the HAL web console from the /console context on the HTTP  management interface."
+    }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Management Web console. Make sure to add an initial user."
     } ],
@@ -2294,11 +2381,17 @@
     } ],
     "managementModel" : { },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "org.eclipse.microprofile.rest.client.annotation,org.eclipse.microprofile.rest.client.inject"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.rest.client.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile REST client."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "org.eclipse.microprofile.rest.client.annotation,org.eclipse.microprofile.rest.client.inject"
     } ],
     "configurations" : [ ],
     "packages" : [ "org.jboss.resteasy.resteasy-client-microprofile", "org.jboss.resteasy.microprofile.config" ]
@@ -2319,11 +2412,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "org.eclipse.microprofile.jwt,org.eclipse.microprofile.auth.LoginConfig"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.jwt.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile JWT."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "org.eclipse.microprofile.jwt,org.eclipse.microprofile.auth.LoginConfig"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -2337,7 +2436,13 @@
       "optional" : true
     } ],
     "managementModel" : { },
-    "properties" : [ ],
+    "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Aggregation of multiple monitoring functionalities"
+    } ],
     "configurations" : [ ],
     "packages" : [ ]
   }, {
@@ -2383,13 +2488,19 @@
     } ],
     "managementModel" : { },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "jakarta.ws.rs,jakarta.ws.rs.core"
-    }, {
       "name" : "org.wildfly.rule.xml-path",
       "value" : "/WEB-INF/web.xml,/web-app/servlet/servlet-class,jakarta.ws.rs.core.Application"
     }, {
       "name" : "org.wildfly.rule.class",
+      "value" : "jakarta.ws.rs,jakarta.ws.rs.core"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta RESTful Web Services with optional ee-concurrency and deployment scanner layers."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
       "value" : "jakarta.ws.rs,jakarta.ws.rs.core"
     } ],
     "configurations" : [ ],
@@ -2411,10 +2522,16 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
+      "name" : "org.wildfly.rule.class",
       "value" : "jakarta.validation.*"
     }, {
-      "name" : "org.wildfly.rule.class",
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Bean Validation"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
       "value" : "jakarta.validation.*"
     } ],
     "configurations" : [ ],
@@ -2432,6 +2549,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "management,wildfly-cli"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Management"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for 'jboss-cli', 'add-user' and 'elytron-tool' launch scripts and configuration files"
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Server command line tools: jboss-cli, add-user, elytron-tool."
@@ -2488,7 +2611,13 @@
       "optional" : true
     } ],
     "managementModel" : { },
-    "properties" : [ ],
+    "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for available MicroProfile platform specifications."
+    } ],
     "configurations" : [ ],
     "packages" : [ ]
   }, {
@@ -2582,6 +2711,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "messaging,remote-activemq"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta Messaging"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for connections to a remote Apache Activemq Artemis Jakarta Messaging broker"
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for connections to a remote Apache Activemq Artemis Jakarta Messaging broker."
@@ -2759,6 +2894,12 @@
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "none"
     }, {
+      "name" : "org.wildfly.category",
+      "value" : "RPC (Remote Procedure Call)"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for IIOP"
+    }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for IIOP."
     } ],
@@ -2791,10 +2932,16 @@
       "name" : "org.wildfly.rule.expect-add-on-family",
       "value" : "messaging"
     }, {
-      "name" : "org.wildfly.rule.annotations",
+      "name" : "org.wildfly.rule.class",
       "value" : "jakarta.jms"
     }, {
-      "name" : "org.wildfly.rule.class",
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta Messaging"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for connections to a remote Jakarta Messaging broker"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
       "value" : "jakarta.jms"
     } ],
     "configurations" : [ ],
@@ -2834,6 +2981,12 @@
     "properties" : [ {
       "name" : "org.wildfly.rule.expected-file",
       "value" : "[/META-INF/beans.xml,/WEB-INF/beans.xml]"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Contexts and Dependency Injection"
     }, {
       "name" : "org.wildfly.rule.annotations",
       "value" : "jakarta.inject,jakarta.enterprise.context"
@@ -2968,6 +3121,12 @@
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "only:jaxrs"
     }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile OpenAPI."
+    }, {
       "name" : "org.wildfly.rule.annotations",
       "value" : "org.eclipse.microprofile.openapi.*"
     }, {
@@ -2999,6 +3158,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Security"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for securing deployment with OIDC"
+    }, {
       "name" : "org.wildfly.rule.xml-path",
       "value" : "/WEB-INF/web.xml,/web-app/login-config/auth-method,OIDC"
     } ],
@@ -3251,6 +3416,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for JNDI"
+    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "javax.naming"
     } ],
@@ -3279,10 +3450,16 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
+      "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.reactive.messaging.*"
     }, {
-      "name" : "org.wildfly.rule.class",
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Reactive Messaging."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
       "value" : "org.eclipse.microprofile.reactive.messaging.*"
     } ],
     "configurations" : [ ],
@@ -3433,7 +3610,13 @@
         }
       }
     },
-    "properties" : [ ],
+    "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta RESTful Web Services."
+    } ],
     "configurations" : [ ],
     "packages" : [ ]
   }, {
@@ -3491,20 +3674,26 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.xml-path",
-      "value" : "[/WEB-INF/classes/META-INF/persistence.xml,/META-INF/persistence.xml],/persistence/persistence-unit/jta-data-source,java:jboss/datasources/ExampleDS"
-    }, {
-      "name" : "org.wildfly.rule.add-on",
-      "value" : "database,h2-database"
-    }, {
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "only:datasources"
     }, {
       "name" : "org.wildfly.rule.bring-datasource",
       "value" : "java:jboss/datasources/ExampleDS"
     }, {
+      "name" : "org.wildfly.category",
+      "value" : "Database"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for an H2 datasource"
+    }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for an H2 datasource."
+    }, {
+      "name" : "org.wildfly.rule.xml-path",
+      "value" : "[/WEB-INF/classes/META-INF/persistence.xml,/META-INF/persistence.xml],/persistence/persistence-unit/jta-data-source,java:jboss/datasources/ExampleDS"
+    }, {
+      "name" : "org.wildfly.rule.add-on",
+      "value" : "database,h2-database"
     } ],
     "configurations" : [ {
       "_address" : "/subsystem=datasources/data-source=*@@@connection-url",
@@ -3532,10 +3721,16 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
+      "name" : "org.wildfly.rule.class",
       "value" : "jakarta.data"
     }, {
-      "name" : "org.wildfly.rule.class",
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Data"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
       "value" : "jakarta.data"
     } ],
     "configurations" : [ ],
@@ -3572,6 +3767,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "only:management"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for base server metrics in Prometheus format."
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for base metrics from the WildFly Management Model and JVM MBeans."
@@ -3611,6 +3812,12 @@
     }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.faces.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Faces."
     }, {
       "name" : "org.wildfly.rule.annotations",
       "value" : "jakarta.faces.annotation"
@@ -3948,6 +4155,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for WildFly singleton HA."
+    }, {
       "name" : "org.wildfly.rule.profile-ha",
       "value" : "singleton-local"
     } ],
@@ -3980,11 +4193,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "org.eclipse.microprofile.faulttolerance"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.faulttolerance.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Fault Tolerance."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "org.eclipse.microprofile.faulttolerance"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -4207,7 +4426,16 @@
         }
       }
     },
-    "properties" : [ ],
+    "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Infinispan-based local cache for stateful session beans."
+    }, {
+      "name" : "org.wildfly.note",
+      "value" : "This layer must be explicitly excluded if ejb-dist-cache is in use."
+    } ],
     "configurations" : [ ],
     "packages" : [ ]
   }, {
@@ -4333,6 +4561,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for distributable web applications. Configures a local Infinispan-based container web cache for data session handling suitable to single node environments."
+    }, {
       "name" : "org.wildfly.rule.xml-path",
       "value" : "/WEB-INF/web.xml,/web-app/distributable"
     } ],
@@ -4423,6 +4657,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "only:undertow"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for mod_cluster subsystem."
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for mod_cluster integration."
@@ -4566,6 +4806,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Reactive Streams Operators."
+    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.reactive.streams.operators.*"
     } ],
@@ -4593,17 +4839,23 @@
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "only:cdi"
     }, {
-      "name" : "org.wildfly.rule.add-on",
-      "value" : "observability,micrometer"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "io.micrometer.core.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Micrometer"
     }, {
       "name" : "org.wildfly.rule.annotations",
       "value" : "io.micrometer.core.annotation"
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for Micrometer."
+    }, {
+      "name" : "org.wildfly.rule.add-on",
+      "value" : "observability,micrometer"
     } ],
     "configurations" : [ ],
     "packages" : [ "io.prometheus" ]
@@ -4677,6 +4929,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Telemetry"
+    }, {
       "name" : "org.wildfly.rule.inclusion-mode",
       "value" : "all-dependencies"
     } ],
@@ -4759,6 +5017,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Base WildFly server"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "A servlet container with support for datasources"
+    }, {
       "name" : "org.wildfly.rule.kind",
       "value" : "base-layer"
     } ],
@@ -4823,6 +5087,12 @@
     }, {
       "name" : "org.wildfly.rule.annotation.field.value-url",
       "value" : "jakarta.annotation.sql.DataSourceDefinition,url=jdbc:h2:*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Database"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for the H2 JDBC driver"
     }, {
       "name" : "org.wildfly.rule.xml-path-xa",
       "value" : "[/WEB-INF/*.xml,/META-INF/*.xml],/datasources/xa-datasource/driver,h2"
@@ -4948,11 +5218,20 @@
       "name" : "org.wildfly.rule.expected-file",
       "value" : "[/META-INF/persistence.xml,/WEB-INF/classes/META-INF/persistence.xml]"
     }, {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "jakarta.persistence"
+      "name" : "org.wildfly.note",
+      "value" : "This layer must be explicitly excluded if jpa-distributed is in use."
     }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.persistence,jakarta.persistence.criteria"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for JPA (using the latest WildFly supported Hibernate release)."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "jakarta.persistence"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -4964,6 +5243,15 @@
     } ],
     "managementModel" : { },
     "properties" : [ {
+      "name" : "org.wildfly.note",
+      "value" : "The jpa dependency can be excluded and jpa-distributed used instead."
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Database"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Hibernate Search."
+    }, {
       "name" : "org.wildfly.rule.annotations",
       "value" : "org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed"
     } ],
@@ -5058,11 +5346,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "jakarta.ejb.MessageDriven,jakarta.ejb.Remote"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.ejb.MessageDrivenContext"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Jakarta Enterprise Beans, excluding the IIOP protocol"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "jakarta.ejb.MessageDriven,jakarta.ejb.Remote"
     } ],
     "configurations" : [ {
       "_address" : "/subsystem=ejb3@@@default-resource-adapter-name",
@@ -5137,6 +5431,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "all-dependencies"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for invoking Jakarta Enterprise Beans over HTTP"
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for invoking Jakarta Enterprise Beans over HTTP."
@@ -5233,6 +5533,12 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Base WildFly server"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "A Jakarta EE Core Profile server"
+    }, {
       "name" : "org.wildfly.rule.kind",
       "value" : "default-base-layer"
     } ],
@@ -5257,6 +5563,12 @@
     "properties" : [ {
       "name" : "org.wildfly.rule.expected-file",
       "value" : "/META-INF/jboss-service.xml"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Management"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for SAR archives to deploy MBeans."
     } ],
     "configurations" : [ ],
     "packages" : [ "org.jboss.as.system-jmx" ]
@@ -5280,6 +5592,12 @@
     } ],
     "managementModel" : { },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Base WildFly server"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "An extension of jaxrs-server to address common cloud requirements."
+    }, {
       "name" : "org.wildfly.rule.kind",
       "value" : "base-layer"
     } ],
@@ -5410,6 +5728,12 @@
     "properties" : [ {
       "name" : "org.wildfly.rule.expected-file",
       "value" : "[/META-INF/ra.xml,/META-INF/ironjacamar.xml]"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for deployment of Jakarta Connectors resource adapters."
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -5424,6 +5748,18 @@
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "all-dependencies"
     }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Reactive Messaging Kafka connector."
+    }, {
+      "name" : "org.wildfly.rule.properties-file-match-mp-kafka-outgoing",
+      "value" : "[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.outgoing.*.connector,smallrye-kafka"
+    }, {
+      "name" : "org.wildfly.rule.add-on-description",
+      "value" : "Support for the MicroProfile Reactive Messaging Kafka connector."
+    }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "reactive-messaging,kafka"
     }, {
@@ -5432,12 +5768,6 @@
     }, {
       "name" : "org.wildfly.rule.properties-file-match-mp-kafka-incoming",
       "value" : "[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.incoming.*.connector,smallrye-kafka"
-    }, {
-      "name" : "org.wildfly.rule.properties-file-match-mp-kafka-outgoing",
-      "value" : "[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.outgoing.*.connector,smallrye-kafka"
-    }, {
-      "name" : "org.wildfly.rule.add-on-description",
-      "value" : "Support for the MicroProfile Reactive Messaging Kafka connector."
     } ],
     "configurations" : [ ],
     "packages" : [ "io.smallrye.reactive.messaging.connector.kafka", "org.wildfly.reactive.messaging.kafka" ]
@@ -5460,11 +5790,20 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.note",
+      "value" : "When using the WildFly cloud feature-pack for cloud deployment, this layer will be automatically provisioned. It is required for POD health check."
+    }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "observability,health"
     }, {
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "only:management"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for runtime health checks."
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for runtime health checks."
@@ -5573,6 +5912,12 @@
     }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.wildfly.clustering.singleton.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for WildFly singleton."
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -5650,6 +5995,12 @@
     } ],
     "managementModel" : { },
     "properties" : [ {
+      "name" : "org.wildfly.category",
+      "value" : "Base WildFly server"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "An extension of 'datasources-web-server' with support for Jakarta RESTful Web Services, CDI and JPA."
+    }, {
       "name" : "org.wildfly.rule.kind",
       "value" : "base-layer"
     } ],
@@ -5663,11 +6014,17 @@
     } ],
     "managementModel" : { },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "jakarta.json.bind.annotation"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "jakarta.json.bind.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta EE"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for JSON Binding (Jakarta JSON Binding) provisioning the Jakarta JSON Binding API and Implementation modules."
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "jakarta.json.bind.annotation"
     } ],
     "configurations" : [ ],
     "packages" : [ "org.eclipse.yasson", "jakarta.json.bind.api" ]
@@ -5740,6 +6097,12 @@
     }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "lra,lra-coordinator"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for acting as coordinator of MicroProfile LRA long-running actions."
     }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for MicroProfile LRA Coordinator."
@@ -6109,6 +6472,12 @@
       "name" : "org.wildfly.rule.add-on-depends-on",
       "value" : "none"
     }, {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for Undertow configured as a load balancer."
+    }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for Undertow configured as a load balancer."
     } ],
@@ -6171,11 +6540,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "org.eclipse.microprofile.health"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "org.eclipse.microprofile.health.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Health"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "org.eclipse.microprofile.health"
     } ],
     "configurations" : [ {
       "_address" : "/subsystem=microprofile-health-smallrye@@@empty-liveness-checks-status",
@@ -6205,20 +6580,26 @@
       "name" : "org.wildfly.rule.properties-file-match-mp-amqp-property",
       "value" : "[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.connector.smallrye-amqp.*"
     }, {
+      "name" : "org.wildfly.rule.add-on-depends-on",
+      "value" : "all-dependencies"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Microprofile"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for MicroProfile Reactive Messaging AMQP connector."
+    }, {
+      "name" : "org.wildfly.rule.add-on-description",
+      "value" : "Support for the MicroProfile Reactive Messaging AMQP connector."
+    }, {
       "name" : "org.wildfly.rule.properties-file-match-mp-amqp-outgoing",
       "value" : "[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.outgoing.*.connector,smallrye-amqp"
     }, {
       "name" : "org.wildfly.rule.properties-file-match-mp-amqp-incoming",
       "value" : "[/META-INF/microprofile-config.properties,/WEB-INF/classes/META-INF/microprofile-config.properties],mp.messaging.incoming.*.connector,smallrye-amqp"
     }, {
-      "name" : "org.wildfly.rule.add-on-depends-on",
-      "value" : "all-dependencies"
-    }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "reactive-messaging,amqp"
-    }, {
-      "name" : "org.wildfly.rule.add-on-description",
-      "value" : "Support for the MicroProfile Reactive Messaging AMQP connector."
     } ],
     "configurations" : [ ],
     "packages" : [ "io.smallrye.reactive.messaging.connector.amqp", "org.wildfly.reactive.messaging.amqp" ]
@@ -6255,6 +6636,12 @@
       "name" : "org.wildfly.rule.add-on",
       "value" : "management,jdr"
     }, {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for the JBoss Diagnostic Reporting (JDR) subsystem."
+    }, {
       "name" : "org.wildfly.rule.add-on-description",
       "value" : "Support for the JBoss Diagnostic Reporting (JDR)."
     } ],
@@ -6274,11 +6661,17 @@
       }
     },
     "properties" : [ {
-      "name" : "org.wildfly.rule.annotations",
-      "value" : "io.opentelemetry.instrumentation.annotations"
-    }, {
       "name" : "org.wildfly.rule.class",
       "value" : "io.opentelemetry.api.*,io.opentelemetry.sdk.*"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Monitoring"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for OpenTelemetry"
+    }, {
+      "name" : "org.wildfly.rule.annotations",
+      "value" : "io.opentelemetry.instrumentation.annotations"
     } ],
     "configurations" : [ ],
     "packages" : [ ]
@@ -6588,20 +6981,26 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.rule.add-on-depends-on",
+      "value" : "only:messaging-activemq"
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Jakarta Messaging"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for an embedded Apache Activemq Artemis Jakarta Messaging broker."
+    }, {
+      "name" : "org.wildfly.rule.add-on-description",
+      "value" : "Support for an embedded Apache Activemq Artemis Jakarta Messaging broker."
+    }, {
       "name" : "org.wildfly.rule.add-on-cardinality",
       "value" : "1"
     }, {
       "name" : "org.wildfly.rule.xml-path",
       "value" : "[/WEB-INF/*-jms.xml,/META-INF/*-jms.xml],/messaging-deployment/server/jms-destinations"
     }, {
-      "name" : "org.wildfly.rule.add-on-depends-on",
-      "value" : "only:messaging-activemq"
-    }, {
       "name" : "org.wildfly.rule.add-on",
       "value" : "messaging,embedded-activemq"
-    }, {
-      "name" : "org.wildfly.rule.add-on-description",
-      "value" : "Support for an embedded Apache Activemq Artemis Jakarta Messaging broker."
     } ],
     "configurations" : [ {
       "_address" : "/subsystem=messaging-activemq/server=*@@@statistics-enabled",
@@ -6973,6 +7372,15 @@
       }
     },
     "properties" : [ {
+      "name" : "org.wildfly.note",
+      "value" : "jpa layer must be explicitly excluded if jpa-distributed is in use."
+    }, {
+      "name" : "org.wildfly.category",
+      "value" : "Clustering"
+    }, {
+      "name" : "org.wildfly.description",
+      "value" : "Support for JPA with a distributed second level cache."
+    }, {
       "name" : "org.wildfly.rule.profile-ha",
       "value" : "jpa"
     } ],

@@ -476,3 +476,15 @@ tr:hover {
     color: #424242;
     line-height: 1.5;
 }
+
+/* Anchor link styling */
+.anchor-link {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: #6c757d;
+    font-weight: normal;
+}
+
+h3:hover .anchor-link {
+    opacity: 1;
+}
