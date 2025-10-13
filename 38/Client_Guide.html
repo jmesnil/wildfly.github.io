@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="author" content="WildFly authors">
 <title>WildFly Client Configuration</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -527,8 +528,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>WildFly Client Configuration</h1>
 <div class="details">
-<span id="revnumber">version 38.0.0.Beta1-SNAPSHOT,</span>
-<span id="revdate">2025-09-30T07:19:19Z</span>
+<span id="author" class="author">WildFly authors</span><br>
+<span id="revnumber">version 38.0.0.Final-SNAPSHOT,</span>
+<span id="revdate">2025-10-13T08:40:32Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">WildFly Client Configuration Guide</div>
@@ -1244,7 +1246,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="sect3">
 <h4 id="net-authenticator"><a class="anchor" href="#net-authenticator"></a>3.1.5. &lt;net-authenticator /&gt;</h4>
 <div class="paragraph">
-<p>This element contains no specific configuration, however if present the [org.wildfly.security.auth.util.ElytronAuthenticator|http://wildfly-security.github.io/wildfly-elytron/1.1.x/org/wildfly/security/auth/util/ElytronAuthenticator.html] will be registered with [java.net.Authenticator.setDefault(Authenticator)|https://docs.oracle.com/javase/8/docs/api/java/net/Authenticator.html#setDefault-java.net.Authenticator-] meaning that the WildFly Elytron authentication client configuration can be used for authentication where the JDK APIs are used for HTTP calls which require authentication.</p>
+<p>This element contains no specific configuration, however if present the [org.wildfly.security.auth.util.ElytronAuthenticator|https://wildfly-security.github.io/wildfly-elytron/documentation/api/upstream/org/wildfly/security/auth/util/ElytronAuthenticator.html] will be registered with [java.net.Authenticator.setDefault(Authenticator)|https://docs.oracle.com/javase/8/docs/api/java/net/Authenticator.html#setDefault-java.net.Authenticator-] meaning that the WildFly Elytron authentication client configuration can be used for authentication where the JDK APIs are used for HTTP calls which require authentication.</p>
 </div>
 <div class="paragraph">
 <p>There are some limitations within this integration as the JDK will cache the authentication JVM wide from the first call so is better used in stand alone processes that don&#8217;t require different credentials for different calls to the same URI,</p>
@@ -2156,11 +2158,13 @@ References in this document to Enterprise JavaBeans (EJB) refer to the Jakarta E
 </div>
 </div>
 </div>
-<div id="footer">
-<div id="footer-text">
-Version 38.0.0.Beta1-SNAPSHOT<br>
-Last updated 2023-06-20 14:59:12 +0200
-</div>
+<hr />
+<div id="footer" style="background: white; text-align: center">
+  <p><img src="https://raw.githubusercontent.com/commonhaus/artwork/main/foundation/brand/project/svg/CF_logo_wildFly_default.svg" style="height: 120px;"/>
+            <br />
+            Copyright &copy; <a href="https://wildfly.org">WildFly</a>.<br />
+            All rights reserved. For details on our trademarks, please visit our <a href="https://www.commonhaus.org/policies/trademark-policy/">Trademark Policy</a> and <a href="https://www.commonhaus.org/trademarks/">Trademark List</a>.<br />
+            Trademarks of third parties are owned by their respective holders and their mention here does not suggest any endorsement or association.</p>
 </div>
 </body>
 </html>

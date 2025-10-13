@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="WildFly developer team">
+<meta name="author" content="WildFly authors">
 <title>Developer Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -528,9 +528,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>Developer Guide</h1>
 <div class="details">
-<span id="author" class="author">WildFly developer team</span><br>
-<span id="revnumber">version 38.0.0.Beta1-SNAPSHOT,</span>
-<span id="revdate">2025-09-30T07:19:19Z</span>
+<span id="author" class="author">WildFly authors</span><br>
+<span id="revnumber">version 38.0.0.Final-SNAPSHOT,</span>
+<span id="revdate">2025-10-13T08:40:32Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">WildFly Developer guide</div>
@@ -878,9 +878,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>&#169; The WildFly Authors.</p>
-</div>
 <!-- toc disabled -->
 <div class="paragraph">
 <div class="title">Target Audience</div>
@@ -4762,7 +4759,8 @@ and also resources specific to the bean type. For example, these are some of the
 </div>
 <div class="paragraph">
 <p>Users can view these enterprise bean resources via WildFly CLI or Administration Console. The following sections
-provides sample CLI and Administration Console output for each enterprise bean type. For complete details, refer to <a href="feature-pack/doc/reference/index.html">WildFly Model Reference</a>.</p>
+provides sample CLI and Administration Console output for each enterprise bean type. For complete details, refer to
+<a href="https://wildscribe.github.io/">WildFly Model Reference Documentation</a></p>
 </div>
 <div class="sect4">
 <h5 id="Stateless_Session_Bean_Runtime_Resources"><a class="anchor" href="#Stateless_Session_Bean_Runtime_Resources"></a>Stateless Session Bean Runtime Resources</h5>
@@ -7870,7 +7868,7 @@ References in this document to Enterprise JavaBeans (EJB) refer to the Jakarta E
 <p>The WildFly JPA subsystem implements the Jakarta Persistence 3.1 container-managed
 requirements. Deploys the persistence unit definitions, the persistence
 unit/context annotations and persistence unit/context references in the
-deployment descriptor. JPA Applications use the Hibernate (version 5.3)
+deployment descriptor. JPA Applications use the Hibernate
 persistence provider, which is included with WildFly. The JPA subsystem
 uses the standard SPI (jakarta.persistence.spi.PersistenceProvider) to
 access the Hibernate persistence provider and some additional extensions
@@ -7891,7 +7889,7 @@ specification</a>.</p>
 </div>
 <div class="paragraph">
 <p>The index of the Hibernate documentation is at
-<a href="https://hibernate.org/orm/documentation/6.1/" class="bare">https://hibernate.org/orm/documentation/6.1/</a></p>
+<a href="https://hibernate.org/orm/documentation/6.6/" class="bare">https://hibernate.org/orm/documentation/6.6/</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -8999,7 +8997,7 @@ References in this document to Java Transaction API (JTA) refer to Jakarta Trans
 <div class="sectionbody">
 <div class="paragraph">
 <p>RESTEasy is the Jakarta RESTful Web Services implementation used in WildFly. For detailed documentation see the
-<a href="https://resteasy.dev/docs">RESTEasy 6.2.12.Final documentation</a>.</p>
+<a href="https://resteasy.dev/docs">RESTEasy 6.2.14.Final documentation</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="jakarta-restful-web-services-activation"><a class="anchor" href="#jakarta-restful-web-services-activation"></a>10.1. Jakarta RESTful Web Services Activation</h3>
@@ -9908,7 +9906,7 @@ is covered under <code>transactions</code> subsystem. For the details refer to
 <a href="Admin_Guide.html#Transactions_Subsystem">Admin Guide Transactions subsystem</a>.</p>
 </div>
 <div class="paragraph">
-<p>To check the subsystem model you can use the <a href="feature-pack/doc/reference/subsystem/transactions/index.html">/subsystem=transactions model reference</a>
+<p>To check the subsystem model you can use the <a href="wildscribe" target="_blank" rel="noopener">WildFly model reference</a>
 or list all the configuration options of the subsystem in <code>jboss-cli</code></p>
 </div>
 <div class="listingblock">
@@ -25598,11 +25596,13 @@ References in this document to Enterprise JavaBeans (EJB) refer to the Jakarta E
 </div>
 </div>
 </div>
-<div id="footer">
-<div id="footer-text">
-Version 38.0.0.Beta1-SNAPSHOT<br>
-Last updated 2025-09-30 08:44:19 +0200
-</div>
+<hr />
+<div id="footer" style="background: white; text-align: center">
+  <p><img src="https://raw.githubusercontent.com/commonhaus/artwork/main/foundation/brand/project/svg/CF_logo_wildFly_default.svg" style="height: 120px;"/>
+            <br />
+            Copyright &copy; <a href="https://wildfly.org">WildFly</a>.<br />
+            All rights reserved. For details on our trademarks, please visit our <a href="https://www.commonhaus.org/policies/trademark-policy/">Trademark Policy</a> and <a href="https://www.commonhaus.org/trademarks/">Trademark List</a>.<br />
+            Trademarks of third parties are owned by their respective holders and their mention here does not suggest any endorsement or association.</p>
 </div>
 </body>
 </html>

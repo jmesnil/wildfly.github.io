@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="WildFly team">
+<meta name="author" content="WildFly authors">
 <title>WildFly and WildFly Preview</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -434,14 +434,103 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/*! Stylesheet for CodeRay to loosely match GitHub themes | MIT License */
+pre.CodeRay{background:#f7f7f8}
+.CodeRay .line-numbers{border-right:1px solid;opacity:.35;padding:0 .5em 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
+.CodeRay .line-numbers strong{color:#000}
+table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.CodeRay td{vertical-align:top;line-height:inherit}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.code{padding:0 0 0 .75em}
+.CodeRay .debug{color:#fff!important;background:navy!important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:navy}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:teal}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:teal}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:teal}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword{color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:teal}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
 </head>
 <body id="WildFly_and_WildFly_Preview" class="book toc2 toc-left">
 <div id="header">
 <h1>WildFly and WildFly Preview</h1>
 <div class="details">
-<span id="author" class="author">WildFly team</span><br>
-<span id="revnumber">version 38.0.0.Beta1-SNAPSHOT,</span>
-<span id="revdate">2025-09-30T07:19:19Z</span>
+<span id="author" class="author">WildFly authors</span><br>
+<span id="revnumber">version 38.0.0.Final-SNAPSHOT,</span>
+<span id="revdate">2025-10-13T08:40:32Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">WildFly and WildFly Preview</div>
@@ -457,6 +546,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#boms">3. BOMs</a></li>
 <li><a href="#other-differences-in-wildfly-preview">4. Other Differences in WildFly Preview</a></li>
+<li><a href="#jakarta-persistence-3-2">5. Jakarta Persistence 3.2+</a>
+<ul class="sectlevel2">
+<li><a href="#special-notes">5.1. Special Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -465,9 +559,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>&#169; The WildFly Authors.</p>
-</div>
 <!-- toc disabled -->
 </div>
 </div>
@@ -929,12 +1020,102 @@ embedded broker is still supported. We&#8217;ve added to the $WILDFLY_HOME/docs/
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="jakarta-persistence-3-2"><a class="anchor" href="#jakarta-persistence-3-2"></a>5. Jakarta Persistence 3.2+</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In <a href="https://jakarta.ee/specifications/persistence/3.2/">Jakarta Persistence 3.2</a> and <a href="https://jakarta.ee/specifications/platform/11/">Jakarta EE 11+</a>,
+there is a requirement to produce the following types for CDI injection:</p>
 </div>
-<div id="footer">
-<div id="footer-text">
-Version 38.0.0.Beta1-SNAPSHOT<br>
-Last updated 2025-09-30 08:44:19 +0200
+<div class="ulist">
+<ul>
+<li>
+<p><code>CriteriaBuilder</code></p>
+</li>
+<li>
+<p><code>EntityManager</code></p>
+</li>
+<li>
+<p><code>EntityManagerFactory</code></p>
+</li>
+<li>
+<p><code>Metamodel</code></p>
+</li>
+<li>
+<p><code>PersistenceUnitUtil</code></p>
+</li>
+<li>
+<p><code>SchemaManager</code></p>
+</li>
+</ul>
 </div>
+<div class="paragraph">
+<p>As noted in the <a href="https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0#a441">specification</a>, the
+<code>EntityManager</code> has a default scope of <code>@TransactionScoped</code>. The <code>EntityManagerFactory</code> has a scope of <code>@ApplicationScoped</code>.
+All other types have a scope of <code>@Dependent</code>.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>persistence.xml</code>, each persistence unit can define their own scope and own qualifiers. It&#8217;s important to note
+if you choose to use CDI for your Jakarta Persistence application, you must create CDI qualifiers if you have more than
+one persistence unit defined in your <code>persistence.xml</code> file. Without this you will likely see deployment failures due
+to ambiguous beans.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example persistence.xml</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="tag">&lt;persistence</span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">&quot;</span></span>
+             <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://jakarta.ee/xml/ns/persistence</span><span class="delimiter">&quot;</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://jakarta.ee/xml/ns/persistence</span>
+        <span class="content">https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd</span><span class="delimiter">&quot;</span></span>
+             <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">3.2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;persistence-unit</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">auth</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;jta-data-source&gt;</span>java:jboss/datasources/AuthDS<span class="tag">&lt;/jta-data-source&gt;</span>
+        <span class="tag">&lt;qualifier&gt;</span>org.wildfly.example.AuthDb<span class="tag">&lt;/qualifier&gt;</span>
+    <span class="tag">&lt;/persistence-unit&gt;</span>
+    <span class="tag">&lt;persistence-unit</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">default</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;jta-data-source&gt;</span>java:jboss/datasources/defaultDS<span class="tag">&lt;/jta-data-source&gt;</span>
+    <span class="tag">&lt;/persistence-unit&gt;</span>
+<span class="tag">&lt;/persistence&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At most one persistence unit is allowed to have no qualifier defined in the <code>persistence.xml</code>. This will be the default
+scoped <code>EntityManagerFactory</code> and <code>EntityManager</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you already have CDI producers defined in your application to inject any of these types, they should continue
+to work. However, you may be able to remove these producers and rely on the default behavior.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="special-notes"><a class="anchor" href="#special-notes"></a>5.1. Special Notes</h3>
+<div class="paragraph">
+<p>It should be noted that there is some ambiguity in the Jakarta EE 11 specification when defining beans for the
+<code>EntityManagerFactory</code>. It&#8217;s noted that bean name is given by the name of the persistence unit. In most cases this
+should be fine. However, if multiple persistence units with the same name exist in a deployment,
+we&#8217;ve opted to not give the bean a name. This will only affect you if you want to use Jakarta Expression Language to
+get the <code>EntityManagerFactory</code> and you&#8217;ve got more than one persistence unit with the same name.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<div id="footer" style="background: white; text-align: center">
+  <p><img src="https://raw.githubusercontent.com/commonhaus/artwork/main/foundation/brand/project/svg/CF_logo_wildFly_default.svg" style="height: 120px;"/>
+            <br />
+            Copyright &copy; <a href="https://wildfly.org">WildFly</a>.<br />
+            All rights reserved. For details on our trademarks, please visit our <a href="https://www.commonhaus.org/policies/trademark-policy/">Trademark Policy</a> and <a href="https://www.commonhaus.org/trademarks/">Trademark List</a>.<br />
+            Trademarks of third parties are owned by their respective holders and their mention here does not suggest any endorsement or association.</p>
 </div>
 </body>
 </html>

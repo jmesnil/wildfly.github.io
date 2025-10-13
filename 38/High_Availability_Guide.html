@@ -529,8 +529,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>High Availability Guide</h1>
 <div class="details">
 <span id="author" class="author">WildFly clustering team</span><br>
-<span id="revnumber">version 38.0.0.Beta1-SNAPSHOT,</span>
-<span id="revdate">2025-09-30T07:19:19Z</span>
+<span id="revnumber">version 38.0.0.Final-SNAPSHOT,</span>
+<span id="revdate">2025-10-13T08:40:32Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">High Availability Guide</div>
@@ -735,9 +735,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>&#169; The WildFly Authors.</p>
-</div>
 <!-- toc disabled -->
 </div>
 </div>
@@ -4286,7 +4283,7 @@ It is only necessary to define a transport if the cache container contains clust
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of transport attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of transport attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 <div class="paragraph">
 <p>To remove an existing JGroups transport, you can either use the standard remove resource operation:</p>
@@ -4328,7 +4325,7 @@ A local cache does not require a transport, as cache reads and writes are always
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of local-cache attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of local-cache attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -4349,7 +4346,7 @@ A replicated cache requires a transport, as cache writes are replicated to all n
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of replicated-cache attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of replicated-cache attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -4370,7 +4367,7 @@ A distributed cache requires a transport, as cache writes need to forward to eac
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of distributed-cache attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of distributed-cache attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -4397,7 +4394,7 @@ By comparison, a distributed cache (with 2 owners) uses 1 remote invocation to w
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of scattered-cache attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of scattered-cache attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -4418,7 +4415,7 @@ An invalidation cache requires a transport, as cache writes trigger invalidation
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of invalidation-cache attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of invalidation-cache attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 </div>
@@ -4514,7 +4511,7 @@ When the number of entries in the cache exceeds this threshold, the least recent
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of memory=object attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of memory=object attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect6">
@@ -4534,7 +4531,7 @@ When the number of entries in the cache exceeds this threshold, the least recent
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of memory=binary attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of memory=binary attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect6">
@@ -4553,7 +4550,7 @@ When the number of entries in the cache exceeds this threshold, the least recent
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of memory=off-heap attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of memory=off-heap attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 </div>
@@ -4602,7 +4599,7 @@ Locks may be acquired either pessimistically (the default), i.e. before invoking
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of transaction attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of transaction attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -4645,7 +4642,7 @@ Cache reads are always lock-free unless invoked using Flag.FORCE_WRITE_LOCK.
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of locking attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of locking attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -4675,7 +4672,7 @@ max-idle based expiration is not generally safe for use with clustered caches, a
 </table>
 </div>
 <div class="paragraph">
-<p>For a complete list of expiration attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of expiration attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -4815,7 +4812,7 @@ While this prevents timeouts due to large state transfers, cache operations on t
 </div>
 </div>
 <div class="paragraph">
-<p>For a complete list of state-transfer attributes, refer to the <a href="feature-pack/doc/reference/index.html" target="_blank" rel="noopener">WildFly management model documentation</a></p>
+<p>For a complete list of state-transfer attributes, refer to the <a href="wildscribe" target="_blank" rel="noopener">WildFly management model documentation</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -5218,7 +5215,7 @@ move on and you will get the points step by step.</p>
 <div class="sect2">
 <h3 id="download-wildfly"><a class="anchor" href="#download-wildfly"></a>12.2. Download WildFly</h3>
 <div class="paragraph">
-<p>First we should download WildFly from the <a href="http://wildfly.org/downloads/">WildFly website</a>.</p>
+<p>First we should download WildFly from the <a href="https://wildfly.org/downloads/">WildFly website</a>.</p>
 </div>
 <div class="paragraph">
 <p>Then I unzipped the package to the primary host and try to make a test run:</p>
@@ -6014,11 +6011,13 @@ References in this document to JavaServer Pages (JSP) refer to the Jakarta Serve
 </div>
 </div>
 </div>
-<div id="footer">
-<div id="footer-text">
-Version 38.0.0.Beta1-SNAPSHOT<br>
-Last updated 2023-06-20 14:59:12 +0200
-</div>
+<hr />
+<div id="footer" style="background: white; text-align: center">
+  <p><img src="https://raw.githubusercontent.com/commonhaus/artwork/main/foundation/brand/project/svg/CF_logo_wildFly_default.svg" style="height: 120px;"/>
+            <br />
+            Copyright &copy; <a href="https://wildfly.org">WildFly</a>.<br />
+            All rights reserved. For details on our trademarks, please visit our <a href="https://www.commonhaus.org/policies/trademark-policy/">Trademark Policy</a> and <a href="https://www.commonhaus.org/trademarks/">Trademark List</a>.<br />
+            Trademarks of third parties are owned by their respective holders and their mention here does not suggest any endorsement or association.</p>
 </div>
 </body>
 </html>

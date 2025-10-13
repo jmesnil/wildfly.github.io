@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="WildFly developer team">
+<meta name="author" content="WildFly authors">
 <title>WildFly Admin Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -528,9 +528,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>WildFly Admin Guide</h1>
 <div class="details">
-<span id="author" class="author">WildFly developer team</span><br>
-<span id="revnumber">version 38.0.0.Beta1-SNAPSHOT,</span>
-<span id="revdate">2025-09-30T07:19:19Z</span>
+<span id="author" class="author">WildFly authors</span><br>
+<span id="revnumber">version 38.0.0.Final-SNAPSHOT,</span>
+<span id="revdate">2025-10-13T08:40:32Z</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">WildFly Admin guide</div>
@@ -666,9 +666,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>&#169; The WildFly Authors.</p>
-</div>
 <!-- toc disabled -->
 </div>
 </div>
@@ -9670,7 +9667,7 @@ This is informational only and the HTTP response code is the only relevant data 
 <div class="quoteblock abstract">
 <blockquote>
 The batch subsystem is used to configure an environment for running
-batch applications. <a href="http://wildfly.org">WildFly</a> uses
+batch applications. <a href="https://wildfly.org">WildFly</a> uses
 <a href="https://github.com/jberet/jsr352">JBeret</a> for its Jakarta Batch implementation.
 Specific information about JBeret can be found in the
 <a href="http://jberet.gitbooks.io/jberet-user-guide/content/">user guide</a>. The
@@ -9682,7 +9679,7 @@ is <code>subsystem=batch-jberet</code>.
 <h4 id="default-subsystem-configuration"><a class="anchor" href="#default-subsystem-configuration"></a><a class="link" href="#default-subsystem-configuration">7.8.1. Default Subsystem Configuration</a></h4>
 <div class="paragraph">
 <p>For up to date information about subsystem configuration options see the
-<a href="feature-pack/doc/reference/subsystem/batch-jberet/index.html">/subsystem=batch-jberet model reference</a>.</p>
+<a href="wildscribe" target="_blank" rel="noopener">WildFly model reference</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -9777,7 +9774,7 @@ job executions from the backing storage mechanism.</p>
 <div class="paragraph">
 <p>There are no deployment descriptors for configuring a batch environment
 defined by the <a href="https://www.jcp.org/en/jsr/detail?id=352">JSR-352
-specification</a>. In <a href="http://wildfly.org">WildFly</a> you can use a
+specification</a>. In <a href="https://wildfly.org">WildFly</a> you can use a
 <code>jboss-all.xml</code> deployment descriptor to define aspects of the batch
 environment for your deployment.</p>
 </div>
@@ -9817,7 +9814,7 @@ deployment descriptor.</p>
 <div class="sect3">
 <h4 id="deployment-resources"><a class="anchor" href="#deployment-resources"></a><a class="link" href="#deployment-resources">7.8.5. Deployment Resources</a></h4>
 <div class="paragraph">
-<p>Some subsystems in <a href="http://wildfly.org">WildFly</a> register runtime
+<p>Some subsystems in <a href="https://wildfly.org">WildFly</a> register runtime
 resources for deployments. The batch subsystem registers jobs and
 executions. The jobs are registered using the job name, this is <em>not</em>
 the job XML name. Executions are registered using the execution id.</p>
@@ -11272,7 +11269,7 @@ handlers). Each handler declares the log format and output.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The WildFly Model Reference provides a complete description of the <a href="feature-pack/doc/reference/subsystem/logging/index.html">/subsystem=logging model reference</a>.
+The WildFly Model Reference provides a complete description of the <a href="./wildscribe/subsystem/logging/index.html">management API for the <code>logging</code> subsystem</a>.
 </td>
 </tr>
 </table>
@@ -14173,9 +14170,9 @@ You  need at least four connections:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>So you should define a <a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html#attr-min-pool-size"><code>min-pool-size</code></a> of 4 for the pool.<br>
+<p>So you should define a <a href="wildscribe/subsystem/datasources/xa-data-source/index.html#attr-min-pool-size"><code>min-pool-size</code></a> of 4 for the pool.<br>
 But one fact that you need to take into account is that paging and large messages can use an unbounded number of threads.
-The size, a.k.a. <a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html#attr-max-pool-size"><code>max-pool-size</code></a>, of the pool should be defined according to the amount of concurrent threads that perform page/large message streaming operations. There is no defined rule for this as there is no 1-1 relation between the number of threads and the number of connections. The number of connections depend on the number of threads processing paging and large messages operations as well as the time you are willing to wait to get a connection (cf. <a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html#attr-blocking-timeout-wait-millis"><code>blocking-timeout-wait-millis</code></a>). When new large messages or paging operations occur they will be in a dedicated thread and will try to get a connection, being enqueued until one is ready or the time to obtain one runs out which will create a failure.<br>
+The size, a.k.a. <a href="wildscribe/subsystem/datasources/xa-data-source/index.html#attr-max-pool-size"><code>max-pool-size</code></a>, of the pool should be defined according to the amount of concurrent threads that perform page/large message streaming operations. There is no defined rule for this as there is no 1-1 relation between the number of threads and the number of connections. The number of connections depend on the number of threads processing paging and large messages operations as well as the time you are willing to wait to get a connection (cf. <a href="https://docs.wildfly.org/22/wildscribe/subsystem/datasources/xa-data-source/index.html#attr-blocking-timeout-wait-millis"><code>blocking-timeout-wait-millis</code></a>). When new large messages or paging operations occur they will be in a dedicated thread and will try to get a connection, being enqueued until one is ready or the time to obtain one runs out which will create a failure.<br>
 You really need to tailor your configuration according to your needs and test it in your environment following the <a href="#DataSource">DataSource Subsystem</a> subsystem documentation and perform tests and peroformance runs before going to production.</p>
 </div>
 <div class="sect4">
@@ -14193,7 +14190,8 @@ You really need to tailor your configuration according to your needs and test it
 <a href="#DataSource">DataSource Subsystem</a></p>
 </li>
 <li>
-<p><a href="feature-pack/doc/reference/subsystem/datasources/xa-data-source/index.html">/subsystem=datasources/xa-data-source model reference</a></p>
+<p>WildFly datasource configuration model
+link:wildscribe/subsystem/datasources/xa-data-source/index.html</p>
 </li>
 </ul>
 </div>
@@ -16435,6 +16433,12 @@ element to the xml or by using the following CLI operation:</p>
 <p>User&#8217;s applications intended to return published values to users via e.g. Jakarta RESTFul Webservices will need to do their own subscriptions and buffering of the data. Care must be taken to not let the cache grow uncontrolled, which could cause OutOfMemoryErrors.</p>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="packaging"><a class="anchor" href="#packaging"></a><a class="link" href="#packaging">7.24.4. Packaging</a></h4>
+<div class="paragraph">
+<p>MicroProfile Reactive Messaging applications are meant to be packaged in Web Archives (i.e. <code>.war</code> files). While other deployment types might work, we only test the <code>.war</code> case thoroughly. You may package the classes using MicroProfile Reactive Messaging in <code>.jar</code> archives, and put those inside the <code>.war</code> file&#8217;s <code>WEB-INb/lib</code> folder, as long as you don&#8217;t change the default classloading behaviour which is to add such <code>.jar</code> files to the <code>.war</code> classloader.</p>
+</div>
 <div class="sect4">
 <h5 id="microprofile-reactive-messaging-smallrye-config-connectors"><a class="anchor" href="#microprofile-reactive-messaging-smallrye-config-connectors"></a><a class="link" href="#microprofile-reactive-messaging-smallrye-config-connectors">Connectors</a></h5>
 <div class="paragraph">
@@ -16824,7 +16828,7 @@ mp.messaging.connector.smallrye-amqp.wildfly.elytron.ssl.context=test
 </div>
 </div>
 <div class="sect3">
-<h4 id="tracing-messages-with-microprofile-telemetry"><a class="anchor" href="#tracing-messages-with-microprofile-telemetry"></a><a class="link" href="#tracing-messages-with-microprofile-telemetry">7.24.4. Tracing messages with MicroProfile Telemetry</a></h4>
+<h4 id="tracing-messages-with-microprofile-telemetry"><a class="anchor" href="#tracing-messages-with-microprofile-telemetry"></a><a class="link" href="#tracing-messages-with-microprofile-telemetry">7.24.5. Tracing messages with MicroProfile Telemetry</a></h4>
 <div class="paragraph">
 <p>The Kafka and AMQP connectors both allow to use MicroProfile Telemetry to trace incoming and outgoing messages. This functionality is disabled in WildFly by default.</p>
 </div>
@@ -16969,7 +16973,7 @@ mp.messaging.outgoing.from-kafka.address=testkafka</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="component-reference-6"><a class="anchor" href="#component-reference-6"></a><a class="link" href="#component-reference-6">7.24.5. Component Reference</a></h4>
+<h4 id="component-reference-6"><a class="anchor" href="#component-reference-6"></a><a class="link" href="#component-reference-6">7.24.6. Component Reference</a></h4>
 <div class="paragraph">
 <p>The MicroProfile Reactive Messaging implementation is provided by the SmallRye Reactive Messaging project.</p>
 </div>
@@ -17953,7 +17957,7 @@ resource in the model.</p>
 </div>
 <div class="paragraph">
 <p>The description of individual attributes and their meaning can be found in the
-<a href="feature-pack/doc/reference/subsystem/transactions/index.html">/subsystem=transactions model reference</a>.</p>
+<a href="wildscribe{outfilesuffix/}subsystem/transactions">Model Reference Guide</a>.</p>
 </div>
 <div class="sect5">
 <h6 id="jts"><a class="anchor" href="#jts"></a><a class="link" href="#jts">jts</a></h6>
@@ -19446,7 +19450,7 @@ you should be able to see the proxied content.</p>
 </div>
 <div class="paragraph">
 <p>The full details of all configuration options available can be found in
-the <a href="feature-pack/doc/reference/subsystem/undertow/index.html">/subsystem=undertow model reference</a>.</p>
+the <a href="wildscribe/subsystem/undertow/index.html" target="_blank" rel="noopener">subsystem reference</a>.</p>
 </div>
 </div>
 </div>
@@ -28273,11 +28277,13 @@ example response would look like this:</p>
 </div>
 </div>
 </div>
-<div id="footer">
-<div id="footer-text">
-Version 38.0.0.Beta1-SNAPSHOT<br>
-Last updated 2025-09-30 08:44:19 +0200
-</div>
+<hr />
+<div id="footer" style="background: white; text-align: center">
+  <p><img src="https://raw.githubusercontent.com/commonhaus/artwork/main/foundation/brand/project/svg/CF_logo_wildFly_default.svg" style="height: 120px;"/>
+            <br />
+            Copyright &copy; <a href="https://wildfly.org">WildFly</a>.<br />
+            All rights reserved. For details on our trademarks, please visit our <a href="https://www.commonhaus.org/policies/trademark-policy/">Trademark Policy</a> and <a href="https://www.commonhaus.org/trademarks/">Trademark List</a>.<br />
+            Trademarks of third parties are owned by their respective holders and their mention here does not suggest any endorsement or association.</p>
 </div>
 </body>
 </html>
